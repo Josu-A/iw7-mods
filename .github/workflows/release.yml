@@ -1,0 +1,60 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths: [mods/**, custom_scripts/**, ui_scripts/**]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BEFORE: ${{ github.event.before }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Publish what changed
+        run: |
+          release() {
+            gh release view "$1" > /dev/null 2>&1 ||
+              gh release create "$1" --title "$2" --notes "$3" --latest="$4"
+          }
+
+          publish() {
+            local tag=$1 zip=$2 published
+            shift 2
+            published=$(gh release view "$tag" --json assets --jq '.assets[].name')
+            if grep -qx "$zip" <<< "$published" &&
+               git diff --quiet "$BEFORE" "$GITHUB_SHA" -- "$@"; then
+              echo "$zip is unchanged"
+              return
+            fi
+            rm -f "$RUNNER_TEMP/$zip"
+            zip -qr "$RUNNER_TEMP/$zip" "$@"
+            gh release upload "$tag" "$RUNNER_TEMP/$zip" --clobber
+            echo "$zip uploaded"
+          }
+
+          release mods-latest "Mods" \
+            "Extract a zip into a \`mods\` folder inside the game's folder, then load the mod from the Mods menu in iw7-mod." true
+          release scripts-latest "Scripts" \
+            "Extract a zip into the \`iw7-mod\` folder inside the game's folder. The script loads on the next map." false
+
+          for script in $(find custom_scripts -name '*.gsc' ! -name 'dev_*' | sort); do
+            name=$(basename "$script" .gsc)
+            files=("$script")
+            [ -d "ui_scripts/$name" ] && files+=("ui_scripts/$name")
+            publish scripts-latest "$name.zip" "${files[@]}"
+          done
+
+          cd mods
+          for mod in */; do
+            mod=${mod%/}
+            publish mods-latest "$(echo "$mod" | tr 'A-Z ' 'a-z_').zip" "$mod"
+          done
