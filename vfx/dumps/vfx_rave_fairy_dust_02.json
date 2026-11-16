@@ -1,0 +1,1936 @@
+{
+    "version": 15,
+    "flags": 262145,
+    "Emitter": [
+        {
+            "particleSpawnRate.min": 2.0,
+            "particleSpawnRate.max": 2.0,
+            "particleLife.min": 1.25,
+            "particleLife.max": 2.0,
+            "particleDelay.min": 0.0,
+            "particleDelay.max": 0.0,
+            "particleCountMax": 1,
+            "particleBurstCount.min": 1,
+            "particleBurstCount.max": 1,
+            "emitterLife.min": 0.0,
+            "emitterLife.max": 0.0,
+            "emitterDelay.min": 0.0,
+            "emitterDelay.max": 0.0,
+            "randomSeed": 5,
+            "spawnRangeSq.min": 0.0,
+            "spawnRangeSq.max": 810000.0,
+            "fadeOutMaxDistance": 800.0,
+            "FadeCurve": {
+                "scale": 0.0
+            },
+            "spawnFrustumCullRadius": 200.0,
+            "gravityOptions": 0,
+            "groupIDs": [
+                1,
+                0,
+                0,
+                0
+            ],
+            "unk1": 0.0,
+            "unk2": 100.0,
+            "particleSpawnShapeRange.min": 0.0,
+            "particleSpawnShapeRange.max": 0.0,
+            "pad": [
+                0
+            ],
+            "flags": 2,
+            "State": [
+                {
+                    "elementType": "PARTICLE_ELEMENT_TYPE_BILLBOARD_SPRITE",
+                    "flags": 4315963472,
+                    "ModuleGroup": {
+                        "PARTICLE_MODULE_GROUP_INIT": {
+                            "disabled": false,
+                            "Module": [
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_SPAWN",
+                                    "m_flags": 0,
+                                    "Curves": [
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.8500000238418579,
+                                                    "invTimeDelta": 1.1764705181121826
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 6.666667938232422
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_ATTRIBUTES",
+                                    "m_flags": 0,
+                                    "m_useNonUniformInterpolationForColor": false,
+                                    "m_useNonUniformInterpolationForSize": false,
+                                    "m_sizeMin.v": [
+                                        10.0,
+                                        10.0,
+                                        10.0,
+                                        0.0
+                                    ],
+                                    "m_sizeMax.v": [
+                                        10.0,
+                                        10.0,
+                                        10.0,
+                                        0.0
+                                    ],
+                                    "m_colorMin.v": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "m_colorMax.v": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "m_velocityMin.v": [
+                                        0.0,
+                                        0.0,
+                                        0.10000000149011612,
+                                        0.0
+                                    ],
+                                    "m_velocityMax.v": [
+                                        0.0,
+                                        0.0,
+                                        0.10000000149011612,
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_MATERIAL",
+                                    "m_flags": 0,
+                                    "AssetList": [
+                                        {
+                                            "material": "eq/vfx_zmb_fairy_anim"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_ATLAS",
+                                    "m_flags": 0,
+                                    "m_playRate": 80,
+                                    "m_startFrame": 0,
+                                    "m_loopCount": -1
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_MIRROR_TEXTURE",
+                                    "m_flags": 0,
+                                    "m_mirrorHorizontal": 2,
+                                    "m_mirrorVertical": 0
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_RELATIVE_VELOCITY",
+                                    "m_flags": 0,
+                                    "m_velocityType": "PARTICLE_RELATIVE_VELOCITY_TYPE_LOCAL_WITH_BOLT_INFO",
+                                    "m_useBoltInfo": true
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_ROTATION",
+                                    "m_flags": 0,
+                                    "m_rotationAngle.min": -0.2617993950843811,
+                                    "m_rotationAngle.max": 0.2617993950843811,
+                                    "m_rotationRate.min": 0.0,
+                                    "m_rotationRate.max": 0.0
+                                }
+                            ]
+                        },
+                        "PARTICLE_MODULE_GROUP_UPDATE": {
+                            "disabled": false,
+                            "Module": [
+                                {
+                                    "type": "PARTICLE_MODULE_COLOR_GRAPH",
+                                    "m_flags": 16,
+                                    "firstCurve": false,
+                                    "m_modulateColorByAlpha": false,
+                                    "m_pad": [
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "Curves": [
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.23137255012989044,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.23137255012989044,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.4627451002597809,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.4627451002597809,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.572549045085907,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.572549045085907,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.7373071908950806,
+                                                    "invTimeDelta": 1.3562867641448975
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 3.806727647781372
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.4000000059604645,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.4000000059604645,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.4470588266849518,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.4470588266849518,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.7764706015586853,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.7764706015586853,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.7373071908950806,
+                                                    "invTimeDelta": 1.3562867641448975
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 3.806727647781372
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_EMISSIVE_GRAPH",
+                                    "m_flags": 0,
+                                    "firstCurve": false,
+                                    "m_pad": [
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "Curves": [
+                                        {
+                                            "scale": 1.2000000476837158,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.42332160472869873,
+                                                    "time": 0.059887781739234924,
+                                                    "invTimeDelta": 16.69789695739746
+                                                },
+                                                {
+                                                    "value": 0.739575982093811,
+                                                    "time": 0.1145862340927124,
+                                                    "invTimeDelta": 18.282052993774414
+                                                },
+                                                {
+                                                    "value": 0.16289746761322021,
+                                                    "time": 0.17096774280071259,
+                                                    "invTimeDelta": 17.736310958862305
+                                                },
+                                                {
+                                                    "value": 0.637809157371521,
+                                                    "time": 0.22398313879966736,
+                                                    "invTimeDelta": 18.862445831298828
+                                                },
+                                                {
+                                                    "value": 0.3409893214702606,
+                                                    "time": 0.24754559993743896,
+                                                    "invTimeDelta": 42.44038772583008
+                                                },
+                                                {
+                                                    "value": 0.9473498463630676,
+                                                    "time": 0.3417952358722687,
+                                                    "invTimeDelta": 10.61012077331543
+                                                },
+                                                {
+                                                    "value": 0.07809179276227951,
+                                                    "time": 0.4040672779083252,
+                                                    "invTimeDelta": 16.05857276916504
+                                                },
+                                                {
+                                                    "value": 0.6250883340835571,
+                                                    "time": 0.4680224359035492,
+                                                    "invTimeDelta": 15.635955810546875
+                                                },
+                                                {
+                                                    "value": 0.26042401790618896,
+                                                    "time": 0.5227208733558655,
+                                                    "invTimeDelta": 18.282058715820313
+                                                },
+                                                {
+                                                    "value": 0.9303886294364929,
+                                                    "time": 0.6102384924888611,
+                                                    "invTimeDelta": 11.426270484924316
+                                                },
+                                                {
+                                                    "value": 0.09081269800662994,
+                                                    "time": 0.7204768061637878,
+                                                    "invTimeDelta": 9.071256637573242
+                                                },
+                                                {
+                                                    "value": 0.790459394454956,
+                                                    "time": 0.8130435347557068,
+                                                    "invTimeDelta": 10.803017616271973
+                                                },
+                                                {
+                                                    "value": 0.38763242959976196,
+                                                    "time": 0.8854137659072876,
+                                                    "invTimeDelta": 13.817835807800293
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 8.727051734924316
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_ROTATION_GRAPH",
+                                    "m_flags": 0,
+                                    "m_useRotationRate": false,
+                                    "m_pad": [
+                                        0
+                                    ],
+                                    "Curves": [
+                                        {
+                                            "scale": 0.8726646304130554,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": -0.11916439980268478,
+                                                    "time": 0.02975132316350937,
+                                                    "invTimeDelta": 33.6119499206543
+                                                },
+                                                {
+                                                    "value": -0.16189280152320862,
+                                                    "time": 0.06460089981555939,
+                                                    "invTimeDelta": 28.694753646850586
+                                                },
+                                                {
+                                                    "value": -0.10571014136075974,
+                                                    "time": 0.10362917929887772,
+                                                    "invTimeDelta": 25.622446060180664
+                                                },
+                                                {
+                                                    "value": 0.20245203375816345,
+                                                    "time": 0.16129033267498016,
+                                                    "invTimeDelta": 17.34269905090332
+                                                },
+                                                {
+                                                    "value": 0.2613934278488159,
+                                                    "time": 0.20114831626415253,
+                                                    "invTimeDelta": 25.08907699584961
+                                                },
+                                                {
+                                                    "value": 0.20735611021518707,
+                                                    "time": 0.2399018257856369,
+                                                    "invTimeDelta": 25.804115295410156
+                                                },
+                                                {
+                                                    "value": -0.050067752599716187,
+                                                    "time": 0.30841514468193054,
+                                                    "invTimeDelta": 14.595701217651367
+                                                },
+                                                {
+                                                    "value": -0.088233083486557,
+                                                    "time": 0.35215291380882263,
+                                                    "invTimeDelta": 22.863534927368164
+                                                },
+                                                {
+                                                    "value": -0.050067752599716187,
+                                                    "time": 0.39954453706741333,
+                                                    "invTimeDelta": 21.10077476501465
+                                                },
+                                                {
+                                                    "value": 0.09772786498069763,
+                                                    "time": 0.47714632749557495,
+                                                    "invTimeDelta": 12.886300086975098
+                                                },
+                                                {
+                                                    "value": 0.1463206559419632,
+                                                    "time": 0.5215476155281067,
+                                                    "invTimeDelta": 22.521869659423828
+                                                },
+                                                {
+                                                    "value": 0.10884846746921539,
+                                                    "time": 0.5698388814926147,
+                                                    "invTimeDelta": 20.707677841186523
+                                                },
+                                                {
+                                                    "value": -0.10049911588430405,
+                                                    "time": 0.6854963302612305,
+                                                    "invTimeDelta": 8.646223068237305
+                                                },
+                                                {
+                                                    "value": -0.14498156309127808,
+                                                    "time": 0.718600869178772,
+                                                    "invTimeDelta": 30.207338333129883
+                                                },
+                                                {
+                                                    "value": -0.09143834561109543,
+                                                    "time": 0.7572227716445923,
+                                                    "invTimeDelta": 25.892044067382813
+                                                },
+                                                {
+                                                    "value": 0.17676004767417908,
+                                                    "time": 0.845771074295044,
+                                                    "invTimeDelta": 11.2932710647583
+                                                },
+                                                {
+                                                    "value": 0.23737311363220215,
+                                                    "time": 0.8920443058013916,
+                                                    "invTimeDelta": 21.610767364501953
+                                                },
+                                                {
+                                                    "value": 0.19028325378894806,
+                                                    "time": 0.9405267238616943,
+                                                    "invTimeDelta": 20.626033782958984
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 16.814273834228516
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_SIZE_GRAPH",
+                                    "m_flags": 16,
+                                    "firstCurve": false,
+                                    "m_sizeBegin.v": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "m_sizeEnd.v": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "m_pad": [
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "Curves": [
+                                        {
+                                            "scale": 3.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.4435294270515442,
+                                                    "time": 0.11711077392101288,
+                                                    "invTimeDelta": 8.538924217224121
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.1886395364999771,
+                                                    "invTimeDelta": 13.980389595031738
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.6456640362739563,
+                                                    "invTimeDelta": 2.1880664825439453
+                                                },
+                                                {
+                                                    "value": 0.5973427295684814,
+                                                    "time": 0.8153337240219116,
+                                                    "invTimeDelta": 5.893804550170898
+                                                },
+                                                {
+                                                    "value": 0.3241007626056671,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 5.4151740074157715
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 3.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.4435294270515442,
+                                                    "time": 0.11711077392101288,
+                                                    "invTimeDelta": 8.538924217224121
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.1886395364999771,
+                                                    "invTimeDelta": 13.980389595031738
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.6456640362739563,
+                                                    "invTimeDelta": 2.1880664825439453
+                                                },
+                                                {
+                                                    "value": 0.5973427295684814,
+                                                    "time": 0.8153337240219116,
+                                                    "invTimeDelta": 5.893804550170898
+                                                },
+                                                {
+                                                    "value": 0.3241007626056671,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 5.4151740074157715
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 0.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.4435294270515442,
+                                                    "time": 0.11711077392101288,
+                                                    "invTimeDelta": 8.538924217224121
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.1886395364999771,
+                                                    "invTimeDelta": 13.980389595031738
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.6456640362739563,
+                                                    "invTimeDelta": 2.1880664825439453
+                                                },
+                                                {
+                                                    "value": 0.5973427295684814,
+                                                    "time": 0.8153337240219116,
+                                                    "invTimeDelta": 5.893804550170898
+                                                },
+                                                {
+                                                    "value": 0.3241007626056671,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 5.4151740074157715
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 4.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.4435294270515442,
+                                                    "time": 0.11711077392101288,
+                                                    "invTimeDelta": 8.538924217224121
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.1886395364999771,
+                                                    "invTimeDelta": 13.980389595031738
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.6456640362739563,
+                                                    "invTimeDelta": 2.1880664825439453
+                                                },
+                                                {
+                                                    "value": 0.5973427295684814,
+                                                    "time": 0.8153337240219116,
+                                                    "invTimeDelta": 5.893804550170898
+                                                },
+                                                {
+                                                    "value": 0.3241007626056671,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 5.4151740074157715
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 4.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.4435294270515442,
+                                                    "time": 0.11711077392101288,
+                                                    "invTimeDelta": 8.538924217224121
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.1886395364999771,
+                                                    "invTimeDelta": 13.980389595031738
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.6456640362739563,
+                                                    "invTimeDelta": 2.1880664825439453
+                                                },
+                                                {
+                                                    "value": 0.5973427295684814,
+                                                    "time": 0.8153337240219116,
+                                                    "invTimeDelta": 5.893804550170898
+                                                },
+                                                {
+                                                    "value": 0.3241007626056671,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 5.4151740074157715
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 0.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.4435294270515442,
+                                                    "time": 0.11711077392101288,
+                                                    "invTimeDelta": 8.538924217224121
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.1886395364999771,
+                                                    "invTimeDelta": 13.980389595031738
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.6456640362739563,
+                                                    "invTimeDelta": 2.1880664825439453
+                                                },
+                                                {
+                                                    "value": 0.5973427295684814,
+                                                    "time": 0.8153337240219116,
+                                                    "invTimeDelta": 5.893804550170898
+                                                },
+                                                {
+                                                    "value": 0.3241007626056671,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 5.4151740074157715
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "PARTICLE_MODULE_GROUP_TEST": {
+                            "disabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "particleSpawnRate.min": 10.0,
+            "particleSpawnRate.max": 12.0,
+            "particleLife.min": 0.20000000298023224,
+            "particleLife.max": 0.800000011920929,
+            "particleDelay.min": 0.0,
+            "particleDelay.max": 0.0,
+            "particleCountMax": 10,
+            "particleBurstCount.min": 35,
+            "particleBurstCount.max": 50,
+            "emitterLife.min": 1.25,
+            "emitterLife.max": 1.850000023841858,
+            "emitterDelay.min": 0.0,
+            "emitterDelay.max": 0.10000000149011612,
+            "randomSeed": 0,
+            "spawnRangeSq.min": 0.0,
+            "spawnRangeSq.max": 160000.0,
+            "fadeOutMaxDistance": 400.0,
+            "FadeCurve": {
+                "scale": 0.0
+            },
+            "spawnFrustumCullRadius": 0.0,
+            "gravityOptions": 0,
+            "groupIDs": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "unk1": 0.0,
+            "unk2": 72.00000762939453,
+            "particleSpawnShapeRange.min": 0.0,
+            "particleSpawnShapeRange.max": 0.0,
+            "pad": [
+                0
+            ],
+            "flags": 0,
+            "State": [
+                {
+                    "elementType": "PARTICLE_ELEMENT_TYPE_BILLBOARD_SPRITE",
+                    "flags": 4332716356,
+                    "ModuleGroup": {
+                        "PARTICLE_MODULE_GROUP_INIT": {
+                            "disabled": false,
+                            "Module": [
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_SPAWN",
+                                    "m_flags": 0,
+                                    "Curves": [
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.75,
+                                                    "invTimeDelta": 1.3333333730697632
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 4.0
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_ATTRIBUTES",
+                                    "m_flags": 0,
+                                    "m_useNonUniformInterpolationForColor": false,
+                                    "m_useNonUniformInterpolationForSize": false,
+                                    "m_sizeMin.v": [
+                                        0.5,
+                                        0.5,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "m_sizeMax.v": [
+                                        1.350000023841858,
+                                        1.350000023841858,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "m_colorMin.v": [
+                                        1.0,
+                                        0.7176470756530762,
+                                        0.5490196347236633,
+                                        1.0
+                                    ],
+                                    "m_colorMax.v": [
+                                        1.0,
+                                        0.5058823823928833,
+                                        0.42352941632270813,
+                                        1.0
+                                    ],
+                                    "m_velocityMin.v": [
+                                        0.0,
+                                        200.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "m_velocityMax.v": [
+                                        0.0,
+                                        200.0,
+                                        0.0,
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_MATERIAL",
+                                    "m_flags": 0,
+                                    "AssetList": [
+                                        {
+                                            "material": "eq/vfx_pyro_spark_glitter_8x8_add"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_ATLAS",
+                                    "m_flags": 0,
+                                    "m_playRate": 40,
+                                    "m_startFrame": 0,
+                                    "m_loopCount": -1
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_RELATIVE_VELOCITY",
+                                    "m_flags": 0,
+                                    "m_velocityType": "PARTICLE_RELATIVE_VELOCITY_TYPE_RELATIVE_TO_EFFECT_ORIGIN",
+                                    "m_useBoltInfo": false
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_ROTATION",
+                                    "m_flags": 0,
+                                    "m_rotationAngle.min": -6.2831854820251465,
+                                    "m_rotationAngle.max": 6.2831854820251465,
+                                    "m_rotationRate.min": 0.0,
+                                    "m_rotationRate.max": 0.0
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_SPAWN_SHAPE_SPHERE",
+                                    "m_flags": 0,
+                                    "m_axisFlags": 63,
+                                    "m_spawnFlags": 0,
+                                    "m_normalAxis": 0,
+                                    "m_spawnType": 0,
+                                    "m_volumeCubeRoot": 0.0,
+                                    "m_offset.v": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "m_offset2.v": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "m_radius.min": 0.0,
+                                    "m_radius.max": 1.0,
+                                    "m_pad": [
+                                        0,
+                                        0
+                                    ]
+                                }
+                            ]
+                        },
+                        "PARTICLE_MODULE_GROUP_UPDATE": {
+                            "disabled": false,
+                            "Module": [
+                                {
+                                    "type": "PARTICLE_MODULE_VELOCITY_GRAPH",
+                                    "m_flags": 16,
+                                    "m_velocityBegin.v": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "m_velocityEnd.v": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "Curves": [
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 10.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.9112903475761414,
+                                                    "time": 0.13087886571884155,
+                                                    "invTimeDelta": 7.640653133392334
+                                                },
+                                                {
+                                                    "value": 0.43538698554039,
+                                                    "time": 0.20090246200561523,
+                                                    "invTimeDelta": 14.280900001525879
+                                                },
+                                                {
+                                                    "value": 0.2265017181634903,
+                                                    "time": 0.392286092042923,
+                                                    "invTimeDelta": 5.225107192993164
+                                                },
+                                                {
+                                                    "value": 0.11466994881629944,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.6455110311508179
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 20.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.919434666633606,
+                                                    "time": 0.13225804269313812,
+                                                    "invTimeDelta": 7.560976982116699
+                                                },
+                                                {
+                                                    "value": 0.44699642062187195,
+                                                    "time": 0.20378679037094116,
+                                                    "invTimeDelta": 13.980393409729004
+                                                },
+                                                {
+                                                    "value": 0.2265017181634903,
+                                                    "time": 0.392286092042923,
+                                                    "invTimeDelta": 5.305059432983398
+                                                },
+                                                {
+                                                    "value": 0.1434628963470459,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.6455110311508179
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_GRAVITY",
+                                    "m_flags": 0,
+                                    "m_gravityPercentage.min": 0.0,
+                                    "m_gravityPercentage.max": 0.05000000074505806
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_COLOR_GRAPH",
+                                    "m_flags": 16,
+                                    "firstCurve": false,
+                                    "m_modulateColorByAlpha": false,
+                                    "m_pad": [
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "Curves": [
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.08235294371843338,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.4156862795352936,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.4901960790157318,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INTENSITY_GRAPH",
+                                    "m_flags": 0,
+                                    "firstCurve": false,
+                                    "m_pad": [
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "Curves": [
+                                        {
+                                            "scale": 8.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.29192396998405457,
+                                                    "invTimeDelta": 3.4255495071411133
+                                                },
+                                                {
+                                                    "value": 0.41290321946144104,
+                                                    "time": 0.3147878050804138,
+                                                    "invTimeDelta": 43.7371940612793
+                                                },
+                                                {
+                                                    "value": 0.9741935729980469,
+                                                    "time": 0.3745843172073364,
+                                                    "invTimeDelta": 16.7233829498291
+                                                },
+                                                {
+                                                    "value": 0.3774193823337555,
+                                                    "time": 0.4074244201183319,
+                                                    "invTimeDelta": 30.450572967529297
+                                                },
+                                                {
+                                                    "value": 0.9693548679351807,
+                                                    "time": 0.44014251232147217,
+                                                    "invTimeDelta": 30.564128875732422
+                                                },
+                                                {
+                                                    "value": 0.4532258212566376,
+                                                    "time": 0.4601559638977051,
+                                                    "invTimeDelta": 49.966392517089844
+                                                },
+                                                {
+                                                    "value": 0.9403226375579834,
+                                                    "time": 0.5085510611534119,
+                                                    "invTimeDelta": 20.663249969482422
+                                                },
+                                                {
+                                                    "value": 0.4145161211490631,
+                                                    "time": 0.5228638052940369,
+                                                    "invTimeDelta": 69.86780548095703
+                                                },
+                                                {
+                                                    "value": 0.9983870983123779,
+                                                    "time": 0.5698337554931641,
+                                                    "invTimeDelta": 21.290206909179688
+                                                },
+                                                {
+                                                    "value": 0.4193548262119293,
+                                                    "time": 0.5941227078437805,
+                                                    "invTimeDelta": 41.170982360839844
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.6410926580429077,
+                                                    "invTimeDelta": 21.290206909179688
+                                                },
+                                                {
+                                                    "value": 0.3774193823337555,
+                                                    "time": 0.6482794880867004,
+                                                    "invTimeDelta": 139.14341735839844
+                                                },
+                                                {
+                                                    "value": 0.9983870983123779,
+                                                    "time": 0.683847963809967,
+                                                    "invTimeDelta": 28.114782333374023
+                                                },
+                                                {
+                                                    "value": 0.39032259583473206,
+                                                    "time": 0.7038614749908447,
+                                                    "invTimeDelta": 49.966243743896484
+                                                },
+                                                {
+                                                    "value": 0.9838709831237793,
+                                                    "time": 0.738004744052887,
+                                                    "invTimeDelta": 29.288349151611328
+                                                },
+                                                {
+                                                    "value": 0.41290321946144104,
+                                                    "time": 0.7466168403625488,
+                                                    "invTimeDelta": 116.1157455444336
+                                                },
+                                                {
+                                                    "value": 0.9951612949371338,
+                                                    "time": 0.7821853160858154,
+                                                    "invTimeDelta": 28.114782333374023
+                                                },
+                                                {
+                                                    "value": 0.39032259583473206,
+                                                    "time": 0.7993484139442444,
+                                                    "invTimeDelta": 58.26454162597656
+                                                },
+                                                {
+                                                    "value": 0.9209677577018738,
+                                                    "time": 0.8306413888931274,
+                                                    "invTimeDelta": 31.956052780151367
+                                                },
+                                                {
+                                                    "value": 0.4000000059604645,
+                                                    "time": 0.8563555479049683,
+                                                    "invTimeDelta": 38.88908004760742
+                                                },
+                                                {
+                                                    "value": 0.7580645084381104,
+                                                    "time": 0.9161520600318909,
+                                                    "invTimeDelta": 16.7233829498291
+                                                },
+                                                {
+                                                    "value": 0.4725807011127472,
+                                                    "time": 0.9176381230354309,
+                                                    "invTimeDelta": 672.9190063476563
+                                                },
+                                                {
+                                                    "value": 0.6935484409332275,
+                                                    "time": 0.9574822187423706,
+                                                    "invTimeDelta": 25.097820281982422
+                                                },
+                                                {
+                                                    "value": 0.056451618671417236,
+                                                    "time": 0.997149646282196,
+                                                    "invTimeDelta": 25.2096004486084
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 10.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "PARTICLE_MODULE_GROUP_TEST": {
+                            "disabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "particleSpawnRate.min": 4.0,
+            "particleSpawnRate.max": 4.0,
+            "particleLife.min": 0.6000000238418579,
+            "particleLife.max": 0.800000011920929,
+            "particleDelay.min": 0.0,
+            "particleDelay.max": 0.0,
+            "particleCountMax": 4,
+            "particleBurstCount.min": 1,
+            "particleBurstCount.max": 1,
+            "emitterLife.min": 1.25,
+            "emitterLife.max": 1.850000023841858,
+            "emitterDelay.min": 0.0,
+            "emitterDelay.max": 0.0,
+            "randomSeed": 5,
+            "spawnRangeSq.min": 0.0,
+            "spawnRangeSq.max": 360000.0,
+            "fadeOutMaxDistance": 500.0,
+            "FadeCurve": {
+                "scale": 0.0
+            },
+            "spawnFrustumCullRadius": 0.0,
+            "gravityOptions": 0,
+            "groupIDs": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "unk1": 0.0,
+            "unk2": 100.0,
+            "particleSpawnShapeRange.min": 0.0,
+            "particleSpawnShapeRange.max": 0.0,
+            "pad": [
+                0
+            ],
+            "flags": 0,
+            "State": [
+                {
+                    "elementType": "PARTICLE_ELEMENT_TYPE_BILLBOARD_SPRITE",
+                    "flags": 4299161600,
+                    "ModuleGroup": {
+                        "PARTICLE_MODULE_GROUP_INIT": {
+                            "disabled": false,
+                            "Module": [
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_SPAWN",
+                                    "m_flags": 0,
+                                    "Curves": [
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.75,
+                                                    "invTimeDelta": 1.3333333730697632
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 4.0
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_ATTRIBUTES",
+                                    "m_flags": 0,
+                                    "m_useNonUniformInterpolationForColor": false,
+                                    "m_useNonUniformInterpolationForSize": false,
+                                    "m_sizeMin.v": [
+                                        6.0,
+                                        6.0,
+                                        10.0,
+                                        0.0
+                                    ],
+                                    "m_sizeMax.v": [
+                                        7.0,
+                                        7.0,
+                                        10.0,
+                                        0.0
+                                    ],
+                                    "m_colorMin.v": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "m_colorMax.v": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "m_velocityMin.v": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "m_velocityMax.v": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_MATERIAL",
+                                    "m_flags": 0,
+                                    "AssetList": [
+                                        {
+                                            "material": "eq/vfx_postfx_radial_glow"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_RELATIVE_VELOCITY",
+                                    "m_flags": 0,
+                                    "m_velocityType": "PARTICLE_RELATIVE_VELOCITY_TYPE_LOCAL_WITH_BOLT_INFO",
+                                    "m_useBoltInfo": true
+                                }
+                            ]
+                        },
+                        "PARTICLE_MODULE_GROUP_UPDATE": {
+                            "disabled": false,
+                            "Module": [
+                                {
+                                    "type": "PARTICLE_MODULE_COLOR_GRAPH",
+                                    "m_flags": 0,
+                                    "firstCurve": false,
+                                    "m_modulateColorByAlpha": false,
+                                    "m_pad": [
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "Curves": [
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.1921568661928177,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.5215686559677124,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.6980392336845398,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.16682694852352142,
+                                                    "time": 0.1911640167236328,
+                                                    "invTimeDelta": 5.231110095977783
+                                                },
+                                                {
+                                                    "value": 0.16682694852352142,
+                                                    "time": 0.7347825765609741,
+                                                    "invTimeDelta": 1.8395251035690308
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 3.770491361618042
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_SIZE_GRAPH",
+                                    "m_flags": 20,
+                                    "firstCurve": false,
+                                    "m_sizeBegin.v": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "m_sizeEnd.v": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "m_pad": [
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "Curves": [
+                                        {
+                                            "scale": 9.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.45077723264694214,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.1886395364999771,
+                                                    "invTimeDelta": 5.3011155128479
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.551332414150238,
+                                                    "invTimeDelta": 2.7571535110473633
+                                                },
+                                                {
+                                                    "value": 0.3856324255466461,
+                                                    "time": 0.806311309337616,
+                                                    "invTimeDelta": 3.9218931198120117
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 5.162924289703369
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 9.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.45077723264694214,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.1886395364999771,
+                                                    "invTimeDelta": 5.3011155128479
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.551332414150238,
+                                                    "invTimeDelta": 2.7571535110473633
+                                                },
+                                                {
+                                                    "value": 0.3856324255466461,
+                                                    "time": 0.806311309337616,
+                                                    "invTimeDelta": 3.9218931198120117
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 5.162924289703369
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 0.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.45077723264694214,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.1886395364999771,
+                                                    "invTimeDelta": 5.3011155128479
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.551332414150238,
+                                                    "invTimeDelta": 2.7571535110473633
+                                                },
+                                                {
+                                                    "value": 0.3856324255466461,
+                                                    "time": 0.806311309337616,
+                                                    "invTimeDelta": 3.9218931198120117
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 5.162924289703369
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 12.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.45077723264694214,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.1886395364999771,
+                                                    "invTimeDelta": 5.3011155128479
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.551332414150238,
+                                                    "invTimeDelta": 2.7571535110473633
+                                                },
+                                                {
+                                                    "value": 0.3856324255466461,
+                                                    "time": 0.806311309337616,
+                                                    "invTimeDelta": 3.9218931198120117
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 5.162924289703369
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 12.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.45077723264694214,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.1886395364999771,
+                                                    "invTimeDelta": 5.3011155128479
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.551332414150238,
+                                                    "invTimeDelta": 2.7571535110473633
+                                                },
+                                                {
+                                                    "value": 0.3856324255466461,
+                                                    "time": 0.806311309337616,
+                                                    "invTimeDelta": 3.9218931198120117
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 5.162924289703369
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 0.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.45077723264694214,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.1886395364999771,
+                                                    "invTimeDelta": 5.3011155128479
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.551332414150238,
+                                                    "invTimeDelta": 2.7571535110473633
+                                                },
+                                                {
+                                                    "value": 0.3856324255466461,
+                                                    "time": 0.806311309337616,
+                                                    "invTimeDelta": 3.9218931198120117
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 5.162924289703369
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "PARTICLE_MODULE_GROUP_TEST": {
+                            "disabled": false
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "occlusionOverrideEmitterIndex": -1,
+    "phaseOptions": 0,
+    "drawFrustumCullRadius": 350.0,
+    "updateFrustumCullRadius": 0.0,
+    "sunDistance": 100000.0,
+    "preRollMSec": 0,
+    "editorPosition.v": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "editorRotation.v": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+    ],
+    "gameTweakPosition.v": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "gameTweakRotation.v": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ]
+}

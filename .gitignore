@@ -1,0 +1,5 @@
+# The iw7-mod client updates itself.
+iw7-mod.exe
+
+# Caches the game writes into the active mod folder.
+*.dcache

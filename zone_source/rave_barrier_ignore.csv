@@ -1,0 +1,6 @@
+lightdef,light_fx_default
+material,eq/vfx_dist_blast_wave_loop_sxy_30_ds
+material,eq/vfx_energy_digitalg
+material,eq/vfx_energy_shockwave_blast_anim_01
+material,eq/vfx_pyro_spark_flicker_8x8_01_hdr_excomp
+material,eq/vfx_vol_smk_wispy_01_anim_z300_unlit

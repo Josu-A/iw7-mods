@@ -1,0 +1,337 @@
+{
+    "version": 15,
+    "flags": 262146,
+    "Emitter": [
+        {
+            "particleSpawnRate.min": 1.0,
+            "particleSpawnRate.max": 1.0,
+            "particleLife.min": 1.0,
+            "particleLife.max": 1.0,
+            "particleDelay.min": 0.0,
+            "particleDelay.max": 0.0,
+            "particleCountMax": 1,
+            "particleBurstCount.min": 1,
+            "particleBurstCount.max": 1,
+            "emitterLife.min": 0.0,
+            "emitterLife.max": 0.0,
+            "emitterDelay.min": 0.0,
+            "emitterDelay.max": 0.0,
+            "randomSeed": 0,
+            "spawnRangeSq.min": 0.0,
+            "spawnRangeSq.max": 0.0,
+            "fadeOutMaxDistance": 0.0,
+            "FadeCurve": {
+                "scale": 0.0
+            },
+            "spawnFrustumCullRadius": 0.0,
+            "gravityOptions": 0,
+            "groupIDs": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "unk1": 0.0,
+            "unk2": 100.0,
+            "particleSpawnShapeRange.min": 0.0,
+            "particleSpawnShapeRange.max": 0.0,
+            "pad": [
+                0
+            ],
+            "flags": 8,
+            "State": [
+                {
+                    "elementType": "PARTICLE_ELEMENT_TYPE_MODEL",
+                    "flags": 4194304,
+                    "ModuleGroup": {
+                        "PARTICLE_MODULE_GROUP_INIT": {
+                            "disabled": false,
+                            "Module": [
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_SPAWN",
+                                    "m_flags": 0,
+                                    "Curves": [
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 0.10000000149011612,
+                                                    "invTimeDelta": 10.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.25,
+                                                    "invTimeDelta": 6.666666507720947
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.75,
+                                                    "invTimeDelta": 2.0
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 4.0
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_ATTRIBUTES",
+                                    "m_flags": 0,
+                                    "m_useNonUniformInterpolationForColor": false,
+                                    "m_useNonUniformInterpolationForSize": false,
+                                    "m_sizeMin.v": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        0.0
+                                    ],
+                                    "m_sizeMax.v": [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        0.0
+                                    ],
+                                    "m_colorMin.v": [
+                                        1.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "m_colorMax.v": [
+                                        1.0,
+                                        0.0,
+                                        0.0,
+                                        1.0
+                                    ],
+                                    "m_velocityMin.v": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    "m_velocityMax.v": [
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        0.0
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_MODEL",
+                                    "m_flags": 0,
+                                    "m_usePhysics": false,
+                                    "m_motionBlurHQ": false,
+                                    "AssetList": [
+                                        {
+                                            "model": "zmb_spaceland_discoball_toy"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_MATERIAL",
+                                    "m_flags": 0,
+                                    "AssetList": [
+                                        {
+                                            "material": "el/vfx_alien_glow_kraken_cone"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PARTICLE_MODULE_INIT_RELATIVE_VELOCITY",
+                                    "m_flags": 0,
+                                    "m_velocityType": "PARTICLE_RELATIVE_VELOCITY_TYPE_LOCAL_WITH_BOLT_INFO",
+                                    "m_useBoltInfo": true
+                                }
+                            ]
+                        },
+                        "PARTICLE_MODULE_GROUP_UPDATE": {
+                            "disabled": false,
+                            "Module": [
+                                {
+                                    "type": "PARTICLE_MODULE_COLOR_GRAPH",
+                                    "m_flags": 0,
+                                    "firstCurve": false,
+                                    "m_modulateColorByAlpha": false,
+                                    "m_pad": [
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "Curves": [
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.9294120073318481,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.0823528990149498,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.9803919792175293,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 0.1529410034418106,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 0.9960780143737793,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 1.0
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "scale": 1.0,
+                                            "ControlPoint": [
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.0,
+                                                    "invTimeDelta": 0.0
+                                                },
+                                                {
+                                                    "value": 1.0,
+                                                    "time": 0.909883975982666,
+                                                    "invTimeDelta": 1.099041223526001
+                                                },
+                                                {
+                                                    "value": 0.0,
+                                                    "time": 1.0,
+                                                    "invTimeDelta": 11.096805572509766
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "PARTICLE_MODULE_GROUP_TEST": {
+                            "disabled": false
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "occlusionOverrideEmitterIndex": -1,
+    "phaseOptions": 0,
+    "drawFrustumCullRadius": -1.0,
+    "updateFrustumCullRadius": -1.0,
+    "sunDistance": 100000.0,
+    "preRollMSec": 0,
+    "editorPosition.v": [
+        40.18009567260742,
+        25.106985092163086,
+        87.33050537109375,
+        0.0
+    ],
+    "editorRotation.v": [
+        -0.7071067690849304,
+        0.7071067690849304,
+        3.0908619663705394e-08,
+        3.0908619663705394e-08
+    ],
+    "gameTweakPosition.v": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "gameTweakRotation.v": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ]
+}
