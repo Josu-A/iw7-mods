@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches: [main]
-    paths: [mods/**, custom_scripts/**, ui_scripts/**]
+    paths: [mods/**, custom_scripts/**, ui_scripts/**, .github/workflows/release.yml]
 
 permissions:
   contents: write
