@@ -53,6 +53,12 @@ jobs:
             publish scripts-latest "$name.zip" "${files[@]}"
           done
 
+          for ui in $(find ui_scripts -mindepth 1 -maxdepth 1 -type d ! -name 'dev_*' | sort); do
+            name=$(basename "$ui")
+            [ -n "$(find custom_scripts -name "$name.gsc")" ] && continue
+            publish scripts-latest "$name.zip" "$ui"
+          done
+
           cd mods
           for mod in */; do
             mod=${mod%/}
