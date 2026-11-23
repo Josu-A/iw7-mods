@@ -1,6 +1,6 @@
 /*
- * Sends the host's position, rounded to whole units, to ui_scripts/show_origin,
- * which draws it at the top of the screen.
+ * Sends the host's position, rounded to whole units, to
+ * ui_scripts/dev_show_origin, which draws it at the top of the screen.
  *
  * Toggled with the showorigin dvar from the console: "set showorigin 1" shows
  * it, "set showorigin 0" hides it. It's off by default.

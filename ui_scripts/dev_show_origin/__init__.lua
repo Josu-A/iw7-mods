@@ -6,7 +6,7 @@ Toggled with the showorigin dvar from the console: "set showorigin 1" shows it,
 "set showorigin 0" hides it. It's off by default.
 
 The UI has no way to read the player's position, so
-custom_scripts/cp/show_origin.gsc sends it in the showorigin_pos dvar as
+custom_scripts/cp/dev_show_origin.gsc sends it in the showorigin_pos dvar as
 "x y z". The client crashes when the server sets a dvar it doesn't have, so
 this script creates it as soon as it starts, and the server waits for it.
 --]]
