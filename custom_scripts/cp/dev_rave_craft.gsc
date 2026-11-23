@@ -46,7 +46,7 @@ watch_dvar()
 
     for(;;)
     {
-        wait 0.05;
+        scripts\engine\utility::waitframe();
 
         name = getdvar("craft");
         if(name == "")
