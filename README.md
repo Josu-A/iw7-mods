@@ -13,6 +13,7 @@ Extract the zip into a `mods` folder inside the game's folder, then load the mod
 | Mod | What it does |
 | --- | --- |
 | [Rave Barriers](https://github.com/Josu-A/iw7-mods/releases/download/mods-latest/rave_barriers.zip) | Restores the cut Rave Vision barriers and fires in Rave in the Redwoods, with a custom barrier effect that cycles through the colour spectrum. |
+| [Slasher Scares](https://github.com/Josu-A/iw7-mods/releases/download/mods-latest/slasher_scares.zip) | Restores the cut Slasher scares in Rave in the Redwoods: at 5 spots, a Slasher walks past players outside Rave Vision once they come near and look that way, then vanishes in his teleport effect. |
 
 ### Scripts
 
