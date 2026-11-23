@@ -1,0 +1,2 @@
+# Animation trees keep the Windows line endings of the game's own files.
+*.atr -text
