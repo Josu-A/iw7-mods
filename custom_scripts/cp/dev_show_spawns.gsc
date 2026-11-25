@@ -1,15 +1,19 @@
 /*
- * Draws a wireframe cube on each zombie spawn point the spawn zones use near
+ * Shows a wireframe cube on each zombie spawn point the spawn zones use near
  * the host. "set showspawns 1" turns it on; it's off by default.
  *   showspawns_radius   flat distance from the host (1000)
- *   showspawns_max      most cubes drawn, nearest first (10)
+ *   showspawns_max      most cubes shown, nearest first (10), 66 at most
  *   showspawns_size     cube width in units (40)
- *   showspawns_refresh  seconds between redraws, in 0.05 steps (0.3)
+ *   showspawns_thick    edge thickness in units (1); raise it to see far cubes
+ *   showspawns_xray     1 shows the cubes through walls (0)
  *
- * Retail builds can't draw debug lines, so each edge is the blue_ark_beam
- * effect, which lasts about a third of a second and is redrawn to stay on
- * screen. Too many effects in one frame disconnect the game, hence the cap and
- * spreading each redraw over frames.
+ * This script only picks the spawn points. ui_scripts/dev_show_spawns draws the
+ * cubes, as UI placed in the world: retail builds can't draw debug lines, and
+ * cubes made of beam effects disconnected the game with a full horde, each
+ * beam being an entity. The two talk through dvars, which the host's game
+ * shares with its server, so only the host sees the cubes. The UI's cubes have
+ * a limit too: 100 of them dropped the game with "Requested a command not
+ * received", and 66 is the most seen working (MAX_CUBES in the UI script).
  */
 
 init()
@@ -18,16 +22,17 @@ init()
     setdvarifuninitialized("showspawns_radius", 1000);
     setdvarifuninitialized("showspawns_max", 10);
     setdvarifuninitialized("showspawns_size", 40);
-    setdvarifuninitialized("showspawns_refresh", 0.3);
-    level thread draw_loop();
+    setdvarifuninitialized("showspawns_thick", 1);
+    setdvarifuninitialized("showspawns_xray", 0);
+    level thread update_loop();
 }
 
 /@
-"Name: draw_loop()"
-"Summary: Redraws the cubes near the host every showspawns_refresh seconds while showspawns is on, once the spawn zones are set up."
-"Example: level thread draw_loop();"
+"Name: update_loop()"
+"Summary: Hands the spawn points near the host to the UI 4 times a second while showspawns is on, once the spawn zones are set up."
+"Example: level thread update_loop();"
 @/
-draw_loop()
+update_loop()
 {
     level endon("game_ended");
 
@@ -37,31 +42,55 @@ draw_loop()
     for(;;)
     {
         host = level.players[0];
-        if(!getdvarint("showspawns") || !isdefined(host) || !isdefined(level._effect["blue_ark_beam"]))
+        if(getdvarint("showspawns") && isdefined(host))
+            set_positions(nearest_spawners(host.origin, getdvarfloat("showspawns_radius"), int(min(getdvarint("showspawns_max"), 66))));
+
+        wait 0.25;
+    }
+}
+
+/@
+"Name: set_positions( <spawners> )"
+"Summary: Writes the spawn points' positions, in whole units, for ui_scripts/dev_show_spawns to read, as \"x y z;x y z\" split over the dvars showspawns_data1 and showspawns_data2, 900 characters each, which holds the 66 cubes the UI draws at most, with \"none\" in an unused one. They're set on the server, where the host's UI reads them, and nothing is sent."
+"MandatoryArg: <spawners>: The spawn points to draw."
+"Example: set_positions( spawners );"
+@/
+set_positions(spawners)
+{
+    chunks = [];
+    chunk = "";
+    foreach(spawner in spawners)
+    {
+        spot = int(spawner.origin[0]) + " " + int(spawner.origin[1]) + " " + int(spawner.origin[2]);
+        if(chunk.size + spot.size > 900)
         {
-            wait 0.25;
-            continue;
+            chunks[chunks.size] = chunk;
+            chunk = "";
         }
 
-        half = getdvarfloat("showspawns_size") / 2;
-        edges = [];
-        foreach(spawner in nearest_spawners(host.origin, getdvarfloat("showspawns_radius"), getdvarint("showspawns_max")))
-            edges = scripts\engine\utility::array_combine(edges, cube_edges(spawner.origin, half));
+        if(chunk != "")
+            chunk += ";";
 
-        frames = int(max(getdvarfloat("showspawns_refresh") / 0.05, 1));
-        for(frame = 0; frame < frames; frame++)
-        {
-            for(i = frame; i < edges.size; i += frames)
-                draw_edge(edges[i][0], edges[i][1]);
+        chunk += spot;
+    }
 
-            scripts\engine\utility::waitframe();
-        }
+    chunks[chunks.size] = chunk;
+
+    for(i = 0; i < 2; i++)
+    {
+        name = "showspawns_data" + (i + 1);
+        data = "none";
+        if(isdefined(chunks[i]) && chunks[i] != "")
+            data = chunks[i];
+
+        if(data != getdvar(name))
+            setdvar(name, data);
     }
 }
 
 /@
 "Name: nearest_spawners( <origin>, <radius>, <count> )"
-"Summary: Returns the spawn zones' spawn points within a flat radius of a spot, nearest first, skipping removed ones."
+"Summary: Returns the spawn zones' spawn points within a flat radius of a spot, skipping removed ones: all of them in the zones' order when count allows, which keeps what's sent steady as the host moves, else the nearest count, nearest first."
 "MandatoryArg: <origin>: The spot to measure from."
 "MandatoryArg: <radius>: How far to look, in units."
 "MandatoryArg: <count>: How many to return at most."
@@ -82,6 +111,9 @@ nearest_spawners(origin, radius, count)
         }
     }
 
+    if(candidates.size <= count)
+        return candidates;
+
     nearest = [];
     while(nearest.size < count && candidates.size > 0)
     {
@@ -97,56 +129,4 @@ nearest_spawners(origin, radius, count)
     }
 
     return nearest;
-}
-
-/@
-"Name: cube_edges( <centre>, <half> )"
-"Summary: Returns the 12 edges of an axis-aligned cube, each as its two corners."
-"MandatoryArg: <centre>: The cube's centre."
-"MandatoryArg: <half>: Half the cube's width."
-"Example: edges = cube_edges( spawner.origin, 20 );"
-@/
-cube_edges(centre, half)
-{
-    corners = [];
-    for(i = 0; i < 8; i++)
-    {
-        x = half;
-        if(i & 1)
-            x = -half;
-
-        y = half;
-        if(i & 2)
-            y = -half;
-
-        z = half;
-        if(i & 4)
-            z = -half;
-
-        corners[i] = centre + (x, y, z);
-    }
-
-    edges = [];
-    for(i = 0; i < 8; i++)
-    {
-        for(bit = 1; bit < 8; bit *= 2)
-        {
-            if(!(i & bit))
-                edges[edges.size] = [corners[i], corners[i | bit]];
-        }
-    }
-
-    return edges;
-}
-
-/@
-"Name: draw_edge( <start>, <end> )"
-"Summary: Stretches the blue_ark_beam effect from one point to another."
-"MandatoryArg: <start>: Where the beam starts."
-"MandatoryArg: <end>: Where it ends."
-"Example: draw_edge( (0, 0, 0), (0, 0, 40) );"
-@/
-draw_edge(start, end)
-{
-    playfxbetweenpoints(level._effect["blue_ark_beam"], start, vectortoangles(end - start), end);
 }
