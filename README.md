@@ -24,6 +24,7 @@ Extract the zip into the `iw7-mod` folder inside the game's folder. The script l
 | [Slasher block fix](https://github.com/Josu-A/iw7-mods/releases/download/scripts-latest/slasher_block_fix.zip) | Fixes the Slasher's block in Rave in the Redwoods, which is meant to cut non-Smiley damage to 10% but never does. |
 | [Slasher ground pound](https://github.com/Josu-A/iw7-mods/releases/download/scripts-latest/slasher_ground_pound.zip) | Restores the Slasher's ground pound in Rave in the Redwoods, an attack the game has but never uses. |
 | [Kendall wall buy](https://github.com/Josu-A/iw7-mods/releases/download/scripts-latest/kendall_wall_buy.zip) | Restores the free Kendall 44 wall buy in Rave in the Redwoods' spawn room, which the game places but never turns on. |
+| [Rave spawner fix](https://github.com/Josu-A/iw7-mods/releases/download/scripts-latest/rave_spawner_fix.zip) | Fixes 4 zombie spawn points in Rave in the Redwoods that drop under the map, where their zombies die straight away and count as kills. |
 | [Health bar](https://github.com/Josu-A/iw7-mods/releases/download/scripts-latest/health_bar.zip) | Shows your health as a bar and as `current / max` above the candy perks in Zombies. On by default; `set healthbar 0` in the console hides it. |
 
 ## Layout
