@@ -1,8 +1,14 @@
 /*
  * Shows entity counts at the top left of the screen, drawn by
  * ui_scripts/dev_show_entities: entities in use, the highest entity number in
- * use, living agents out of the agent pool and the 6 most common classnames.
- * "set showents 1" turns it on; it's off by default.
+ * use, living agents out of the agent pool, the host's waiting notify queues
+ * and the 24 most common classnames. "set showents 1" turns it on; it's off by
+ * default.
+ *
+ * The queues are the ones scripts\cp\utility::add_to_notify_queue() keeps in
+ * self.notify_queue, such as player_earned_money and katana_melee_hit. Each
+ * waiting entry is a live thread, so a queue that keeps growing fills the
+ * engine's script variable pool and crashes the game.
  *
  * Scripts can't read how many entity slots are free, so it counts what
  * getentarray() returns, twice a second. It's only sent to the host, once its
@@ -47,7 +53,7 @@ send_counts()
             continue;
         }
 
-        data = counts();
+        data = self counts();
         if(data == last)
             continue;
 
@@ -58,8 +64,8 @@ send_counts()
 
 /@
 "Name: counts()"
-"Summary: Returns the counts as \"entities highest alive pool class=count ...\", the classnames most common first."
-"Example: data = counts();"
+"Summary: Returns the counts as \"entities highest alive pool @queue=waiting ... class=count ...\", with the player's waiting notify queues, then the classnames most common first."
+"Example: data = self counts();"
 @/
 counts()
 {
@@ -93,8 +99,14 @@ counts()
 
     data = entities.size + " " + highest + " " + alive + " " + pool;
 
+    if(isdefined(self.notify_queue))
+    {
+        foreach(name in getarraykeys(self.notify_queue))
+            data += " @" + name + "=" + (self.notify_queue[name] + 1);
+    }
+
     names = getarraykeys(classes);
-    for(i = 0; i < 6 && names.size > 0; i++)
+    for(i = 0; i < 24 && names.size > 0; i++)
     {
         best = 0;
         for(j = 1; j < names.size; j++)

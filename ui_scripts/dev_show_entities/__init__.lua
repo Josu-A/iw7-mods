@@ -1,15 +1,15 @@
 --[[
 Lists entity counts in small text at the top left of the screen: entities in
 use and the highest entity number in use, living agents out of the agent pool,
-then the most common classnames.
+the host's waiting notify queues, then the most common classnames.
 
 Toggled with the showents dvar from the console: "set showents 1" shows it,
 "set showents 0" hides it. It's off by default.
 
 custom_scripts/cp/dev_show_entities.gsc sends the counts in the showents_data
-dvar as "entities highest alive pool class=count ...". The client crashes when
-the server sets a dvar it doesn't have, so this script creates it as soon as it
-starts, and the server waits for it.
+dvar as "entities highest alive pool @queue=waiting ... class=count ...". The
+client crashes when the server sets a dvar it doesn't have, so this script
+creates it as soon as it starts, and the server waits for it.
 --]]
 
 if Engine.InFrontend() then
@@ -18,9 +18,9 @@ end
 
 local TOP = 6
 local LEFT = 6
-local LINE = 16
+local LINE = 10
 local WIDTH = 400
-local LINES = 8
+local LINES = 32
 
 --[[
 The UI state survives going back to the menu and the script loads again on the
@@ -111,7 +111,14 @@ local function parse(data)
     }
 
     for i = 5, #words do
-        local name, count = words[i]:match("^(.-)=(%d+)$")
+        local queue, waiting = words[i]:match("^@(.-)=(%d+)$")
+        if queue then
+            lines[#lines + 1] = "Queue " .. queue .. " " .. waiting
+        end
+    end
+
+    for i = 5, #words do
+        local name, count = words[i]:match("^([^@].-)=(%d+)$")
         if name then
             lines[#lines + 1] = name .. " " .. count
         end
