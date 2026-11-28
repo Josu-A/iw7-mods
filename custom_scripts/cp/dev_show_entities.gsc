@@ -2,13 +2,16 @@
  * Shows entity counts at the top left of the screen, drawn by
  * ui_scripts/dev_show_entities: entities in use, the highest entity number in
  * use, living agents out of the agent pool, the host's waiting notify queues
- * and the 24 most common classnames. "set showents 1" turns it on; it's off by
- * default.
+ * and buffered notifies, and the 24 most common classnames. "set showents 1"
+ * turns it on; it's off by default.
  *
  * The queues are the ones scripts\cp\utility::add_to_notify_queue() keeps in
  * self.notify_queue, such as player_earned_money and katana_melee_hit. Each
  * waiting entry is a live thread, so a queue that keeps growing fills the
- * engine's script variable pool and crashes the game.
+ * engine's script variable pool and crashes the game. The buffered notifies are
+ * the lists scripts\cp\utility::bufferednotify() keeps in
+ * self.bufferednotifications, such as currency_earned_buffered, which send one
+ * entry per frame and can grow the same way.
  *
  * Scripts can't read how many entity slots are free, so it counts what
  * getentarray() returns, twice a second. It's only sent to the host, once its
@@ -64,7 +67,7 @@ send_counts()
 
 /@
 "Name: counts()"
-"Summary: Returns the counts as \"entities highest alive pool @queue=waiting ... class=count ...\", with the player's waiting notify queues, then the classnames most common first."
+"Summary: Returns the counts as \"entities highest alive pool @queue=waiting ... +list=waiting ... class=count ...\", with the player's waiting notify queues and buffered notifies, then the classnames most common first."
 "Example: data = self counts();"
 @/
 counts()
@@ -103,6 +106,15 @@ counts()
     {
         foreach(name in getarraykeys(self.notify_queue))
             data += " @" + name + "=" + (self.notify_queue[name] + 1);
+    }
+
+    if(isdefined(self.bufferednotifications))
+    {
+        foreach(name in getarraykeys(self.bufferednotifications))
+        {
+            if(self.bufferednotifications[name].size > 0)
+                data += " +" + name + "=" + self.bufferednotifications[name].size;
+        }
     }
 
     names = getarraykeys(classes);

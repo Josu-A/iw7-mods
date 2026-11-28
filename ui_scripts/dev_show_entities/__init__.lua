@@ -1,15 +1,18 @@
 --[[
 Lists entity counts in small text at the top left of the screen: entities in
 use and the highest entity number in use, living agents out of the agent pool,
-the host's waiting notify queues, then the most common classnames.
+the host's waiting notify queues and buffered notifies, then the most common
+classnames.
 
 Toggled with the showents dvar from the console: "set showents 1" shows it,
 "set showents 0" hides it. It's off by default.
 
 custom_scripts/cp/dev_show_entities.gsc sends the counts in the showents_data
-dvar as "entities highest alive pool @queue=waiting ... class=count ...". The
-client crashes when the server sets a dvar it doesn't have, so this script
-creates it as soon as it starts, and the server waits for it.
+dvar as "entities highest alive pool @queue=waiting ... +list=waiting ...
+class=count ...". The engine turns "%" in a dvar into ".", so the buffered
+notifies are marked with "+". The client crashes when the server sets a dvar it
+doesn't have, so this script creates it as soon as it starts, and the server
+waits for it.
 --]]
 
 if Engine.InFrontend() then
@@ -92,8 +95,28 @@ local function visible()
 end
 
 --[[
+The kinds of counts after the entity and agent counts, in the order they're
+drawn: each word's pattern and what its line starts with.
+--]]
+local KINDS = {
+    {
+        pattern = "^@(.-)=(%d+)$",
+        label = "Queue "
+    },
+    {
+        pattern = "^%+(.-)=(%d+)$",
+        label = "Buffered "
+    },
+    {
+        pattern = "^([^@+].-)=(%d+)$",
+        label = ""
+    }
+}
+
+--[[
 Turns the dvar's value into the lines to draw, or nil until the first counts
-arrive.
+arrive. Each kind of count is a group of lines, with an empty line between
+groups.
 --]]
 local function parse(data)
     local words = {}
@@ -105,22 +128,37 @@ local function parse(data)
         return nil
     end
 
-    local lines = {
-        "Entities " .. words[1] .. ", highest #" .. words[2],
-        "Agents alive " .. words[3] .. " / " .. words[4]
+    local groups = {
+        {
+            "Entities " .. words[1] .. ", highest #" .. words[2],
+            "Agents alive " .. words[3] .. " / " .. words[4]
+        }
     }
-
-    for i = 5, #words do
-        local queue, waiting = words[i]:match("^@(.-)=(%d+)$")
-        if queue then
-            lines[#lines + 1] = "Queue " .. queue .. " " .. waiting
-        end
+    for k = 1, #KINDS do
+        groups[k + 1] = {}
     end
 
     for i = 5, #words do
-        local name, count = words[i]:match("^([^@].-)=(%d+)$")
-        if name then
-            lines[#lines + 1] = name .. " " .. count
+        for k, kind in ipairs(KINDS) do
+            local name, count = words[i]:match(kind.pattern)
+            if name then
+                local group = groups[k + 1]
+                group[#group + 1] = kind.label .. name .. " " .. count
+                break
+            end
+        end
+    end
+
+    local lines = {}
+    for _, group in ipairs(groups) do
+        if #group > 0 then
+            if #lines > 0 then
+                lines[#lines + 1] = ""
+            end
+
+            for _, line in ipairs(group) do
+                lines[#lines + 1] = line
+            end
         end
     end
 
