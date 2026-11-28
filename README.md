@@ -37,6 +37,7 @@ Extract the zip into the `iw7-mod` folder inside the game's folder. The script l
 | `ui_scripts/` | One folder per UI script. A folder named after a game script is released in that script's zip. |
 | `zonetool/`, `zone_source/` | What [x64-zt](https://github.com/Joelrau/x64-zt) builds a mod's fastfile from. |
 | `vfx/` | The generator for the Rave Barriers effect, and the game effects it's built from. |
+| `tools/` | Testing tools that run outside the game. |
 
 ## Build
 
